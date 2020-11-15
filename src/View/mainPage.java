@@ -960,6 +960,8 @@ public final class mainPage extends javax.swing.JFrame {
      try {
          myCompany.buy();
          
+         new CheckoutPage(myCompany.subTotal,myCompany.Total).setVisible(true);
+         
          CheckoutPanel.setVisible(false);
          PAIEMENTPANEL.setVisible(true);
          ResultReturnPanel.setVisible(false);
@@ -981,6 +983,7 @@ public final class mainPage extends javax.swing.JFrame {
        //reset 
        myCompany.reset();
        onewayselected = false ; 
+       
       
          
        ResultPanel.setVisible(false);

@@ -20,6 +20,7 @@ public class Company {
     public Connexion conn ; 
     public boolean oneway ; 
     public double subTotal ; 
+    public double Total ; 
     public int numberofperson;
     
     
@@ -40,6 +41,7 @@ public class Company {
     subTotal=0;
     pricedep = 0; 
     pricearv = 0; 
+    Total =0; 
     
     }
         
@@ -82,6 +84,7 @@ public void reset()
     oneway = true ; 
     numberofperson = 1 ;
     subTotal=0;
+    Total=0;
     selectedFlightdep = null;
     selectedFlightarv=null;
     pricedep = 0; 
@@ -95,9 +98,8 @@ public void buy() throws Exception{
   if(user instanceof Customer )
     {
     Customer A = (Customer) user ; 
-    
-    System.out.println("kokokokokokokokokokokokoko" + subTotal);
-    A.buy(subTotal);
+   
+    Total = A.buy(subTotal);
    
     for(int i = 0 ; i < numberofperson ; i++) {
         
@@ -117,7 +119,8 @@ public void buy() throws Exception{
     new CompanyController().addbookedflight(999,selectedFlightdep,pricedep);
     if(oneway==false)
     new CompanyController().addbookedflight(999,selectedFlightarv,pricearv);  
-    }          
+    }
+    Total = subTotal ;  
     }
      
 }

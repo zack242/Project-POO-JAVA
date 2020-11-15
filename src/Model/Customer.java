@@ -30,7 +30,7 @@ public class Customer extends Person  implements discount{
        
    }
  
-   public void buy(double subtotal)
+ public double buy(double subtotal)
    {
 
      
@@ -48,7 +48,7 @@ public class Customer extends Person  implements discount{
          amount  = subtotal*(1-DSC_REGULAR);
   
      
-System.out.println("amount " + amount );
+  return amount ; 
        
    }
    
