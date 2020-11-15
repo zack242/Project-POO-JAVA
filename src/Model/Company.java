@@ -101,25 +101,22 @@ public void buy() throws Exception{
    
     Total = A.buy(subTotal);
    
-    for(int i = 0 ; i < numberofperson ; i++) {
-        
-    new CompanyController().addbookedflight(A.getId(),selectedFlightdep,pricedep);
-    if(oneway==false)
-    new CompanyController().addbookedflight(A.getId(),selectedFlightarv,pricearv); 
-        
-        
-    }
     
+        
+    new CompanyController().addbookedflight(A.getId(),selectedFlightdep,numberofperson,pricedep);
+    if(oneway==false)
+    new CompanyController().addbookedflight(A.getId(),selectedFlightarv,numberofperson,pricearv); 
+        
+        
         
     }
   else
     {
-     for(int i = 0 ; i < numberofperson ; i++) 
-    {    
-    new CompanyController().addbookedflight(999,selectedFlightdep,pricedep);
+         
+    new CompanyController().addbookedflight(999,selectedFlightdep,numberofperson,pricedep);
     if(oneway==false)
-    new CompanyController().addbookedflight(999,selectedFlightarv,pricearv);  
-    }
+    new CompanyController().addbookedflight(999,selectedFlightarv,numberofperson,pricearv);  
+    
     Total = subTotal ;  
     }
      

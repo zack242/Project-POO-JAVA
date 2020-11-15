@@ -32,11 +32,24 @@ public  class Person {
         
     }
     
-    String getName(){
+   public String getName(){
        
         return first_name;
         
     }
+    
+   public String getLastName(){
+       
+        return last_name;
+        
+    }
+    
+   public  String getBirtday(){
+       
+        return birthday ;
+        
+    }
+    
     
     
   void addAmount(double priceoffly){

@@ -5,6 +5,8 @@
  */
 package Model;
 
+import Controller.CompanyController;
+import java.sql.ResultSet;
 import java.util.Arrays;
 
 /**
@@ -57,9 +59,20 @@ public class Customer extends Person  implements discount{
              
    }
    
+   public ResultSet getBookedFlight() throws Exception{
+       
+     return  new CompanyController().getBookedFlightuser(id_customer);
+        
+   }
    
+   public void deleteFlights(String numberofFly) throws Exception
+   {
     
-
-    
+     new CompanyController().deleteFlights(id_customer, numberofFly);   
+         
+       
+   }
+   
+   
     
 }

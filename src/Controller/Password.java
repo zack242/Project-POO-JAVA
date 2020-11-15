@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Password {
     
-   String hashpassword(String input){
+  public String hashpassword(String input){
       
        StringBuilder sb ; 
        try{

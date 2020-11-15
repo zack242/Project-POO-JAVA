@@ -88,6 +88,36 @@ public class Connexion{
         connected = true ;   
     } 
       
-    
+  
+ public String getuseremail(int id_customer) throws Exception
+ {
+     
+  String sql = "SELECT * FROM `customer` WHERE `ID` LIKE '"+id_customer+"' ;";
+     
+   System.out.print(sql);
+   
+   return  new ConnexionSQL().requetetoString(sql,"email");
+  
+ 
+ } 
+ 
+ 
+ public void Updateuser(String first , String last , String email , String password,double id_customer ) throws Exception{
+     
+     String sql = " UPDATE `customer` SET `first_name` = '"+ first  +"', `last_name` = '"+ last + "', `email` = '"+ email +"', `password_hash` = '"+ password + "' WHERE `customer`.`ID` = "+id_customer +"";
+     
+     new ConnexionSQL().requeteInsert(sql);
+     
+     
+ }
+ 
+  public void Updateuser(String first , String last , String email ,double id_customer ) throws Exception{
+     
+     String sql = " UPDATE `customer` SET `first_name` = '"+ first  +"', `last_name` = '"+ last + "', `email` = '"+ email +"' WHERE `customer`.`ID` = "+id_customer +"";
+     
+     new ConnexionSQL().requeteInsert(sql);
+     
+     
+ }  
     
 }

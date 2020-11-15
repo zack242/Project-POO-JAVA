@@ -10,6 +10,7 @@ import Controller.CheckoutController;
 import Controller.ConnexionSQL;
 import Controller.FlightsController;
 import Model.Company;
+import Model.Customer;
 import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,6 +41,7 @@ public final class mainPage extends javax.swing.JFrame {
        CheckoutPanel.setVisible(false);
        PAIEMENTPANEL.setVisible(false);
        ResultReturnPanel.setVisible(false);
+       ManageBookedFlight.setVisible(false);
            
         
     }
@@ -72,6 +74,9 @@ public final class mainPage extends javax.swing.JFrame {
         String name = myCompany.getNameuser(); 
         username.setText("Hello  " + name );
         
+        if(myCompany.user instanceof Customer)
+         ManageBookedFlight.setVisible(true);
+        
     }
 
     /**
@@ -87,6 +92,8 @@ public final class mainPage extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
+        ManageBookedFlight = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         BackgroundPanel = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         ResearchPanel1 = new javax.swing.JPanel();
@@ -161,6 +168,32 @@ public final class mainPage extends javax.swing.JFrame {
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setText("MR TOZY ZAKARIA");
 
+        ManageBookedFlight.setBackground(new java.awt.Color(255, 153, 0));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /airport.png")); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ManageBookedFlightLayout = new javax.swing.GroupLayout(ManageBookedFlight);
+        ManageBookedFlight.setLayout(ManageBookedFlightLayout);
+        ManageBookedFlightLayout.setHorizontalGroup(
+            ManageBookedFlightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageBookedFlightLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+        ManageBookedFlightLayout.setVerticalGroup(
+            ManageBookedFlightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageBookedFlightLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout ToolsPanelLayout = new javax.swing.GroupLayout(ToolsPanel);
         ToolsPanel.setLayout(ToolsPanelLayout);
         ToolsPanelLayout.setHorizontalGroup(
@@ -170,7 +203,9 @@ public final class mainPage extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addComponent(ManageBookedFlight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -179,14 +214,19 @@ public final class mainPage extends javax.swing.JFrame {
             .addGroup(ToolsPanelLayout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ToolsPanelLayout.createSequentialGroup()
+            .addGroup(ToolsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ToolsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ToolsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ToolsPanelLayout.createSequentialGroup()
+                        .addGroup(ToolsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(ToolsPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17))
                     .addGroup(ToolsPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21))
+                        .addComponent(ManageBookedFlight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         getContentPane().add(ToolsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 100));
@@ -531,7 +571,7 @@ public final class mainPage extends javax.swing.JFrame {
         total.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         total.setForeground(new java.awt.Color(255, 255, 255));
         total.setText("000");
-        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 10, 70, -1));
+        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 10, 100, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -737,7 +777,7 @@ public final class mainPage extends javax.swing.JFrame {
             .addGroup(ResultReturnPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         ResultReturnPanelLayout.setVerticalGroup(
             ResultReturnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -805,7 +845,7 @@ public final class mainPage extends javax.swing.JFrame {
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addComponent(PAIEMENTPANEL, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(PAIEMENTPANEL, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ResearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -827,7 +867,7 @@ public final class mainPage extends javax.swing.JFrame {
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 739, Short.MAX_VALUE)
                 .addContainerGap())
         );
         BackgroundPanelLayout.setVerticalGroup(
@@ -1046,6 +1086,21 @@ public final class mainPage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ResulteTab1MouseClicked
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+     try {
+         
+         // Button of manage the flight ;
+         new ManageFlightPage((Customer) myCompany.user).setVisible(true);
+         //hide();
+         
+         
+     } catch (Exception ex) {
+         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+     }
+        
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1089,6 +1144,7 @@ public final class mainPage extends javax.swing.JFrame {
     private javax.swing.JTextField Cityofdep1;
     private javax.swing.JTable DEPTAB;
     private com.toedter.calendar.JDateChooser DepartDate;
+    private javax.swing.JPanel ManageBookedFlight;
     private javax.swing.JPanel PAIEMENTPANEL;
     private javax.swing.JPanel PanelOneway1;
     private javax.swing.JPanel ROADFLYPANEL;
@@ -1110,6 +1166,7 @@ public final class mainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
