@@ -46,6 +46,13 @@ public class CompanyController {
         
     }
     
+    public void deleteFlights(String numberofFly) throws Exception{
+        
+        String sql = "DELETE FROM `flights` WHERE `flights`.`FLIGHT NO.` =  '"+ numberofFly +"' ;" ; 
+        
+        new ConnexionSQL().requeteInsert(sql);
+        
+    }
     public ResultSet getFlights() throws Exception{
         
         String sql =  " SELECT * FROM `flights` " ;
@@ -72,6 +79,17 @@ public class CompanyController {
     String sql = " INSERT INTO `flights` (`FLIGHT NO.`, `TIME`, `DEPART`, `DESTINATION`, `PRICE`, `DATE`) VALUES ('"+number+ "', '"+Time +"', '"+depart+"', '"+destination+"', '"+price+"', '"+date+"') ; " ;
             
     new ConnexionSQL().requeteInsert(sql);
+        
+    }
+    
+    public void uptadeFlight(String depart , String destination , String Time ,String number,String date, double price ,String id_flights ) throws Exception, Exception
+    {
+        
+   
+    String sql = " UPDATE `flights` SET `FLIGHT NO.` = '"+ number +"', `TIME` = '"+ Time +" ', `DEPART` = '"+depart+"', `DESTINATION` = '"+destination+"', `PRICE` = '"+price+"', `DATE` = '"+date+"' WHERE `flights`.`FLIGHT NO.` = '"+id_flights+"' ";
+    new ConnexionSQL().requeteInsert(sql);
+    System.out.print(sql);
+    
         
     }
     

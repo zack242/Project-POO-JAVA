@@ -40,11 +40,20 @@ public class Employe extends Person{
     public void addFlights(Flight flight) throws Exception{
        
         new CompanyController().addFlight(flight.getdepart(),flight.destination,flight.Time,flight.number,flight.date,flight.price);
-        
-        
-        
+                
     }
-     
+    
+    public void UpdateFlights(Flight flight) throws Exception{
+       
+        new CompanyController().uptadeFlight(flight.getdepart(),flight.destination,flight.Time,flight.number,flight.date,flight.price,selectedFlights.getNumber());
+                
+    }
+    
+    public void DeleteFlights() throws Exception{
+        
+        new CompanyController().deleteFlights(selectedFlights.getNumber());
+            
+    }
     
     
     

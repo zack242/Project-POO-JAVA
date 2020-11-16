@@ -267,8 +267,18 @@ public class EmployePage extends javax.swing.JFrame {
         });
 
         jButton2.setText("Uptade");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Delete");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /plane.png")); // NOI18N
@@ -750,8 +760,7 @@ public class EmployePage extends javax.swing.JFrame {
         String depart,Destination,time,date,number;
         double price ; 
         
-      
-        
+       
         depart = this.depart.getText();
         Destination = this.Destination.getText();
         time =  Time.getText();
@@ -782,6 +791,64 @@ public class EmployePage extends javax.swing.JFrame {
     private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numberActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // boutton of update flights ;        
+        String depart,Destination,time,date,number;
+        double price ; 
+        
+       
+        depart = this.depart.getText();
+        Destination = this.Destination.getText();
+        time =  Time.getText();
+        
+        price = Double.parseDouble(this.price.getText());
+        number = this.number.getText();
+        date = this.Date.getText();
+        
+        if(number.isEmpty()  || depart.isEmpty() || Destination.isEmpty() || time.isEmpty() ||  date.isEmpty() )
+        messageFlights.setText("Plese try again");
+        else {
+            
+        Flight flight = new Flight(depart,Destination,time,number,date,price);
+        
+        messageFlights.setText("Flights has been updtadeted ");
+        
+            try {
+                
+                user.UpdateFlights(flight);
+                Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
+                
+            } catch (Exception ex) {
+                
+                Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+                messageFlights.setText(ex.getMessage());
+                
+            }
+        
+        
+         }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        try {
+            // Delete button flight
+            user.DeleteFlights();
+            messageFlights.setText("Operation Succes "); 
+            Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
+                       
+        } catch (Exception ex){
+            
+            messageFlights.setText(ex.getMessage());
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
