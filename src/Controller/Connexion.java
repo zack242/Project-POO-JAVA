@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.Customer;
+import Model.Employe;
 import View.ConnexionPage;
 import java.sql.ResultSet;
 import java.util.logging.Level;
@@ -49,6 +50,40 @@ public class Connexion{
           
     }
     
+    
+    public boolean LoginEmploye(String email,String password) throws Exception{
+        
+        String sql,hash=""; 
+        
+        sql = "SELECT * FROM `Employees` WHERE `email` LIKE '"+email+"' ;"; //The requete from to base to get the hash associated to the mail
+         
+       try {
+           
+       hash =  new ConnexionSQL().requetetoString(sql,"password_hash") ;   
+       
+       
+       }catch (Exception ex){
+         Logger.getLogger(ConnexionPage.class.getName()).log(Level.SEVERE, null, ex);
+       }
+      
+       
+       
+       if(true == new Password().checkpassword(password, hash)){//Call the methode from Password to check 
+            
+           
+           
+           
+           return true; 
+           
+       }
+         
+        
+       else 
+         return false ; 
+          
+    }
+    
+    
     public boolean Signup(String first,String last ,String birthday,String email,String password) throws Exception{
        
     
@@ -83,11 +118,29 @@ public class Connexion{
         sql = "SELECT * FROM `customer` WHERE `email` LIKE '"+email+"' ;";
         
          
-        user =  new ConnexionSQL().requetetoobject(sql) ; 
+        user = (Customer) new ConnexionSQL().requetetoobject(sql) ; 
          
         connected = true ;   
     } 
       
+  
+   public  Employe  setEmploye (String email) throws Exception{
+        
+        String sql ; 
+        ResultSet rset ; 
+        
+        sql = "SELECT * FROM `Employees` WHERE `email` LIKE '"+email+"' ;";
+        
+         
+        return  (Employe) new ConnexionSQL().requetetoobject2(sql) ; 
+         
+         
+    } 
+      
+  
+  
+  
+  
   
  public String getuseremail(int id_customer) throws Exception
  {

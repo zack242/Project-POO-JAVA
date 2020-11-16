@@ -13,6 +13,8 @@ package Controller;
  * Librairies importées
  */
 import Model.Customer;
+import Model.Employe;
+import Model.Flight;
 import java.sql.*;
 
 
@@ -98,19 +100,39 @@ public final class ConnexionSQL {
          
         rset = stmt.executeQuery(sql);
         rset.next();
-        
-   
-     
+         
         return  new Customer(rset.getString("first_name"),rset.getString("last_name"),rset.getString("birthday"),rset.getInt("ID") );
           
            
      }
+   
+   public Employe requetetoobject2(String sql) throws SQLException{
+         
+        rset = stmt.executeQuery(sql);
+        rset.next();
+       
+  
+        return  new Employe(rset.getString("first_name"),rset.getString("last_name"),rset.getString("birthday"),rset.getInt("ID") );
+                  
+     }
+   
    
      
    public ResultSet requetetoflights(String sql) throws SQLException{
        
        rset = stmt.executeQuery(sql);
        return  rset; 
+       
+   }
+   
+   public Flight getselectedfligh(String sql ) throws SQLException{
+        
+       rset = stmt.executeQuery(sql);
+       rset.next();
+       System.out.print(rset.getString("DEPART"));
+       
+       return new Flight(rset.getString("DEPART"),rset.getString("DESTINATION"), rset.getString("TIME") , rset.getString("FLIGHT NO."),rset.getString("DATE"), Double.parseDouble(rset.getString("PRICE"))) ; 
+   
        
    }
      
