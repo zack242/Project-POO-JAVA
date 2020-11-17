@@ -119,7 +119,7 @@ public class CompanyController {
     
      public ResultSet getBookedFlight() throws Exception{
         
-        String sql =  " SELECT * FROM `bookedflight` " ;
+        String sql = "SELECT * FROM `bookedflight` ; " ; 
         ResultSet rset = new ConnexionSQL().requetetoflights(sql); 
         
         return rset ; 

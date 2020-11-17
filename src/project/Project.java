@@ -6,6 +6,7 @@
 package project;
 
 import Controller.ConnexionSQL;
+import Controller.JFREECHART;
 import Model.Company;
 import View.LoadingPage;
 import java.sql.SQLException;
@@ -25,6 +26,8 @@ public class Project {
       new LoadingPage().setVisible(true);
       // new mainPage().setVisible(true);
        Company mycompany = new Company();
+       
+       new JFREECHART().main();
       
      
       

@@ -89,8 +89,17 @@ public class EmployePage extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         BookedFlightPage = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        BookedFlightTab = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        totalflights = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        Numberofreservation = new javax.swing.JLabel();
+        numberofpersonnes = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         ToolsPanel = new javax.swing.JPanel();
         MenuUpdate = new javax.swing.JPanel();
         UpPanel = new javax.swing.JLabel();
@@ -499,9 +508,11 @@ public class EmployePage extends javax.swing.JFrame {
 
         jLayeredPane1.add(CustomerDataPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 490));
 
-        BookedFlightPage.setBackground(new java.awt.Color(153, 255, 153));
+        BookedFlightPage.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        BookedFlightTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -512,7 +523,91 @@ public class EmployePage extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(BookedFlightTab);
+
+        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
+
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /dollar.png")); // NOI18N
+        jLabel15.setText("TOTAL SALES ");
+
+        totalflights.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        totalflights.setForeground(new java.awt.Color(255, 255, 255));
+        totalflights.setText("900");
+
+        jLabel17.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /plane.png")); // NOI18N
+        jLabel17.setText(" Number of reservations ");
+
+        Numberofreservation.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        Numberofreservation.setForeground(new java.awt.Color(255, 255, 255));
+        Numberofreservation.setText("20");
+
+        numberofpersonnes.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        numberofpersonnes.setForeground(new java.awt.Color(255, 255, 255));
+        numberofpersonnes.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /user copie.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Numberofreservation, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(numberofpersonnes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalflights, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(totalflights, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Numberofreservation, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addComponent(numberofpersonnes)))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane4)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        jTabbedPane1.addTab("Sales", jPanel1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 557, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 415, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel3);
 
         javax.swing.GroupLayout BookedFlightPageLayout = new javax.swing.GroupLayout(BookedFlightPage);
         BookedFlightPage.setLayout(BookedFlightPageLayout);
@@ -520,15 +615,15 @@ public class EmployePage extends javax.swing.JFrame {
             BookedFlightPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BookedFlightPageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         BookedFlightPageLayout.setVerticalGroup(
             BookedFlightPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BookedFlightPageLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         jLayeredPane1.add(BookedFlightPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 490));
@@ -717,7 +812,42 @@ public class EmployePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-       ///Booked Flight PAge 
+       ///Booked Flight PAge
+       int numbeofperson=0;
+       int numberofrow = 0 ;
+       int total = 0 ; 
+        
+       try {
+           
+            BookedFlightTab.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight()));
+            numberofrow = BookedFlightTab.getRowCount();
+            
+            Numberofreservation.setText(String.valueOf(numberofrow));
+                  
+           for(int i = 0 ; i < numberofrow ; i++ ){
+               numbeofperson += (int) BookedFlightTab.getModel().getValueAt(i,3) ; 
+               total += (int) BookedFlightTab.getModel().getValueAt(i,3) * (int) BookedFlightTab.getModel().getValueAt(i,4);
+               
+           }
+                 
+           numberofpersonnes.setText( String.valueOf(numbeofperson));
+           totalflights.setText(String.valueOf(total));
+       
+           
+            
+            
+        } catch (Exception ex) {
+            
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+       
+       
+       
+       
+       
+       
+       //////////////////////////////
         ConnexionPage.setVisible(false);
         CustomerDataPage.setVisible(false);
         UpdateFlightsPage.setVisible(false);
@@ -896,7 +1026,7 @@ public class EmployePage extends javax.swing.JFrame {
         try {
             
             BookedflightsTable.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight(id_customer)));
-           // CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
+          
            
             
         } catch (Exception ex) {
@@ -985,6 +1115,7 @@ public class EmployePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BookedFlightPage;
+    private javax.swing.JTable BookedFlightTab;
     private javax.swing.JTable BookedflightsTable;
     private javax.swing.JPanel ConnexionPage;
     private javax.swing.JPanel CustomerDataPage;
@@ -996,6 +1127,7 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JPanel MenuCustomer;
     private javax.swing.JPanel MenuUpdate;
     private javax.swing.JPanel MenujPanel10;
+    private javax.swing.JLabel Numberofreservation;
     private javax.swing.JPasswordField PasswordField1;
     private javax.swing.JTextField Time;
     private javax.swing.JPanel ToolsPanel;
@@ -1014,6 +1146,8 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1023,16 +1157,21 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable4;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton login;
     private javax.swing.JLabel message;
     private javax.swing.JLabel messageFlights;
     private javax.swing.JLabel messageLabel;
     private javax.swing.JTextField number;
+    private javax.swing.JLabel numberofpersonnes;
     private javax.swing.JTextField price;
+    private javax.swing.JLabel totalflights;
     // End of variables declaration//GEN-END:variables
 }
