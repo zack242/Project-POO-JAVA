@@ -27,7 +27,7 @@ public class Project {
       // new mainPage().setVisible(true);
        Company mycompany = new Company();
        
-       new JFREECHART().main();
+      
       
      
       

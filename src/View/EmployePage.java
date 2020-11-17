@@ -7,11 +7,16 @@ package View;
 
 import Controller.Connexion;
 import Controller.ConnexionSQL;
+import Controller.JFREECHART;
 import Model.Employe;
 import Model.Flight;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.proteanit.sql.DbUtils;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
 
 /**
  *
@@ -99,7 +104,9 @@ public class EmployePage extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         Numberofreservation = new javax.swing.JLabel();
         numberofpersonnes = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        graphepanel = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         ToolsPanel = new javax.swing.JPanel();
         MenuUpdate = new javax.swing.JPanel();
         UpPanel = new javax.swing.JLabel();
@@ -596,18 +603,54 @@ public class EmployePage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Sales", jPanel1);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 557, Short.MAX_VALUE)
+        graphepanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        jButton6.setText("Total sales by flight");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Best sellers");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout graphepanelLayout = new javax.swing.GroupLayout(graphepanel);
+        graphepanel.setLayout(graphepanelLayout);
+        graphepanelLayout.setHorizontalGroup(
+            graphepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphepanelLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addGroup(graphepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
+        graphepanelLayout.setVerticalGroup(
+            graphepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphepanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jTabbedPane1.addTab("Graphe", graphepanel);
 
         javax.swing.GroupLayout BookedFlightPageLayout = new javax.swing.GroupLayout(BookedFlightPage);
         BookedFlightPage.setLayout(BookedFlightPageLayout);
@@ -832,15 +875,15 @@ public class EmployePage extends javax.swing.JFrame {
                  
            numberofpersonnes.setText( String.valueOf(numbeofperson));
            totalflights.setText(String.valueOf(total));
-       
-           
-            
-            
+          
         } catch (Exception ex) {
-            
-            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
-            
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);     
         }
+       
+        //////////////////////////////////////////////////////
+        
+       
+      
        
        
        
@@ -1078,6 +1121,30 @@ public class EmployePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    // total sales by flighs
+           
+            new JFREECHART().ghraph(BookedFlightTab);
+        
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        try {
+            new JFREECHART().ghraph2(BookedFlightTab);
+        } catch (Exception ex) {
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1135,11 +1202,14 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JPanel UpdateFlightsPage;
     private javax.swing.JTextField depart;
     private javax.swing.JFormattedTextField emailTextField;
+    private javax.swing.JPanel graphepanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1159,7 +1229,6 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
