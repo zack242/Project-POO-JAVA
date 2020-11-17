@@ -38,6 +38,9 @@ public class CompanyController {
         
     }
     
+    
+    
+    
     public void deleteFlights(double id_customer , String numberofFly) throws Exception{
         
         String sql = " DELETE FROM `bookedflight` WHERE `bookedflight`.`id_client` = " + id_customer+ " AND `bookedflight`.`FLIGHT NO.` = '" + numberofFly +"'  " ; 
@@ -49,6 +52,7 @@ public class CompanyController {
     public void deleteFlights(String numberofFly) throws Exception{
         
         String sql = "DELETE FROM `flights` WHERE `flights`.`FLIGHT NO.` =  '"+ numberofFly +"' ;" ; 
+        ////ici ajouter une requete pour supprimer de la table de booked ; 
         
         new ConnexionSQL().requeteInsert(sql);
         
@@ -93,5 +97,41 @@ public class CompanyController {
         
     }
     
+    
+    public ResultSet getCustomer() throws Exception {
+        
+        String sql = "SELECT * FROM `customer`";
+        ResultSet rset = new ConnexionSQL().requetetoflights(sql); 
+        
+        return rset ; 
+            
+    }
+    
+    
+     public ResultSet getBookedFlight(int id_customer) throws Exception{
+        
+        String sql =  " SELECT * FROM `bookedflight` WHERE `id_client` = '"+id_customer+"' ";
+        ResultSet rset = new ConnexionSQL().requetetoflights(sql); 
+        
+        return rset ; 
+             
+    }
+    
+     public ResultSet getBookedFlight() throws Exception{
+        
+        String sql =  " SELECT * FROM `bookedflight` " ;
+        ResultSet rset = new ConnexionSQL().requetetoflights(sql); 
+        
+        return rset ; 
+             
+    }
+    
+ 
+    public void deleteCustomer(int id_customer) throws Exception{
+        
+        String sql = " DELETE FROM `customer` WHERE `customer`.`ID` = '"+id_customer+"' ";
+        new ConnexionSQL().requeteInsert(sql);
+        
+    }
     
 }

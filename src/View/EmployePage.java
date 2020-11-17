@@ -81,9 +81,9 @@ public class EmployePage extends javax.swing.JFrame {
         messageFlights = new javax.swing.JLabel();
         CustomerDataPage = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        CustomersTable = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        BookedflightsTable = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -372,11 +372,12 @@ public class EmployePage extends javax.swing.JFrame {
                     .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
-                .addGroup(UpdateFlightsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(UpdateFlightsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(UpdateFlightsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20)
                 .addGroup(UpdateFlightsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -389,7 +390,7 @@ public class EmployePage extends javax.swing.JFrame {
 
         CustomerDataPage.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        CustomersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -400,9 +401,18 @@ public class EmployePage extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        CustomersTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        CustomersTable.setSelectionBackground(new java.awt.Color(255, 153, 0));
+        CustomersTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        CustomersTable.setShowHorizontalLines(false);
+        CustomersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CustomersTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(CustomersTable);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        BookedflightsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -413,7 +423,10 @@ public class EmployePage extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        BookedflightsTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        BookedflightsTable.setSelectionBackground(new java.awt.Color(255, 153, 0));
+        BookedflightsTable.setShowGrid(false);
+        jScrollPane3.setViewportView(BookedflightsTable);
 
         jLabel13.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel13.setText("Customers");
@@ -421,9 +434,24 @@ public class EmployePage extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel14.setText("Booked Flights ");
 
-        jButton4.setText("Delete Booked Flights");
+        jButton4.setText("Delete Customer");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
-        jButton5.setText("Delete Customer");
+        jButton5.setText("Delete Booked Flights");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CustomerDataPageLayout = new javax.swing.GroupLayout(CustomerDataPage);
         CustomerDataPage.setLayout(CustomerDataPageLayout);
@@ -455,19 +483,18 @@ public class EmployePage extends javax.swing.JFrame {
         CustomerDataPageLayout.setVerticalGroup(
             CustomerDataPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CustomerDataPageLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addContainerGap()
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(CustomerDataPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jLayeredPane1.add(CustomerDataPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 490));
@@ -672,7 +699,17 @@ public class EmployePage extends javax.swing.JFrame {
     }//GEN-LAST:event_UpPanelMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-      /// Customer date  button page
+        try {
+            /// Customer date  button page
+            CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
+            
+        } catch (Exception ex) { 
+            
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+         
+      ///////////////////////////
         ConnexionPage.setVisible(false);
         CustomerDataPage.setVisible(true);
         UpdateFlightsPage.setVisible(false);
@@ -850,6 +887,67 @@ public class EmployePage extends javax.swing.JFrame {
           
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void CustomersTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CustomersTableMouseClicked
+        // clicked customers table 
+        int row = CustomersTable.getSelectedRow();
+        int id_customer = (int) CustomersTable.getModel().getValueAt(row,5);
+       
+
+        try {
+            
+            BookedflightsTable.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight(id_customer)));
+           // CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
+           
+            
+        } catch (Exception ex) {
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+
+    }//GEN-LAST:event_CustomersTableMouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // Button to delete customer 
+         int row = CustomersTable.getSelectedRow();
+         int id_customer = (int) CustomersTable.getModel().getValueAt(row,5);
+         
+        try {
+            user.deleteCustomer(id_customer);
+            CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
+            
+        } catch (Exception ex) {
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       
+          // Button delete booked flight
+            
+            int row = BookedflightsTable.getSelectedRow();
+            int id_customer = (int) BookedflightsTable.getModel().getValueAt(row,1);
+            String number = (String) BookedflightsTable.getModel().getValueAt(row,2);
+           
+         try {   
+             
+            user.deleteFlights(id_customer, number);
+            BookedflightsTable.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight(id_customer)));
+            
+        } catch (Exception ex) {
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -887,8 +985,10 @@ public class EmployePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BookedFlightPage;
+    private javax.swing.JTable BookedflightsTable;
     private javax.swing.JPanel ConnexionPage;
     private javax.swing.JPanel CustomerDataPage;
+    private javax.swing.JTable CustomersTable;
     private javax.swing.JTextField Date;
     private javax.swing.JTextField Destination;
     private javax.swing.JTable Flights;
@@ -927,8 +1027,6 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JButton login;
     private javax.swing.JLabel message;

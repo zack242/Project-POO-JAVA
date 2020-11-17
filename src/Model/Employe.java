@@ -55,6 +55,38 @@ public class Employe extends Person{
             
     }
     
+     public ResultSet getCustomer() throws Exception{
+      
+      return new CompanyController().getCustomer() ;      
+      
+  }  
+    
+   public ResultSet getBookedFlight(int id_customer) throws Exception{
+      
+      return new CompanyController().getBookedFlight(id_customer) ;      
+      
+  } 
+   
+  public ResultSet getBookedFlight() throws Exception{
+      
+      return new CompanyController().getBookedFlight() ;      
+      
+  } 
+  
+  public void deleteCustomer(int id_customer) throws Exception {
+      
+       new CompanyController().deleteCustomer(id_customer);
+      
+  }
+
+  public void deleteFlights(double id_customer , String numberofFly) throws Exception{
+      
+      new CompanyController().deleteFlights(id_customer, numberofFly);
+      
+      
+  }
+   
+     
     
     
     
