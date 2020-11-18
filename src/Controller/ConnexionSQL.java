@@ -48,7 +48,7 @@ public final class ConnexionSQL {
             return conn;
 
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error : " + e.getMessage());
+           // System.out.println("Error : " + e.getMessage());
         }
 
         return null;
@@ -121,7 +121,7 @@ public final class ConnexionSQL {
 
         rset = stmt.executeQuery(sql);
         rset.next();
-        System.out.print(rset.getString("DEPART"));
+     //   System.out.print(rset.getString("DEPART"));
 
         return new Flight(rset.getString("DEPART"), rset.getString("DESTINATION"), rset.getString("TIME"), rset.getString("FLIGHT NO."), rset.getString("DATE"), Double.parseDouble(rset.getString("PRICE")));
 

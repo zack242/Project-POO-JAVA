@@ -960,7 +960,7 @@ public final class mainPage extends javax.swing.JFrame {
 
             int row = ResulteTab.getSelectedRow();
             String numberfly = (String) ResulteTab.getModel().getValueAt(row, 0);
-            System.out.print(numberfly);
+         //   System.out.print(numberfly);
 
             myCompany.addFlight(numberfly, 0);
             DEPTAB.setModel(DbUtils.resultSetToTableModel(new FlightsController().GetFlight(numberfly)));
@@ -1058,7 +1058,7 @@ public final class mainPage extends javax.swing.JFrame {
           
             int row = ResulteTab1.getSelectedRow();
             String numberfly = (String) ResulteTab1.getModel().getValueAt(row, 0);
-            System.out.print(numberfly);
+         //   System.out.print(numberfly);
 
             myCompany.addFlight(numberfly, 1);
             ARVTAB1.setModel(DbUtils.resultSetToTableModel(new FlightsController().GetFlight(numberfly)));

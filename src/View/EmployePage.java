@@ -918,7 +918,7 @@ public class EmployePage extends javax.swing.JFrame {
                 MenuUpdate.setVisible(true);
 
                 user = new Connexion().setEmploye(email);
-                System.out.print(user.getName());
+               // System.out.print(user.getName());
 
                 Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
 

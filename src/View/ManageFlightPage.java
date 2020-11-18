@@ -420,7 +420,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
 
             String email = new Connexion().getuseremail(user.getId());
             EmailField.setText(email);
-            System.out.print(email);
+            //System.out.print(email);
 
         } catch (Exception ex) {
             Logger.getLogger(ManageFlightPage.class.getName()).log(Level.SEVERE, null, ex);
@@ -463,6 +463,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         ///Button to update the flight 
 
+        
         try {
 
             String first, last, email, password;
@@ -473,13 +474,14 @@ public class ManageFlightPage extends javax.swing.JFrame {
             password = passwordField.getText();
             password = new Password().hashpassword(password);
 
-            if (password.isBlank() == true) {
-                new Connexion().Updateuser(first, last, email, password, user.getId());
-            }
-            if (password.isBlank() == false) {
+            if (passwordField.getText().equals("")){
                 new Connexion().Updateuser(first, last, email, user.getId());
             }
-            MessageLabel.setText("DONE");
+            else 
+            {    
+                new Connexion().Updateuser(first, last, email,password,user.getId());
+            }
+            MessageLabel.setText("Update");
 
         } catch (Exception ex) {
 

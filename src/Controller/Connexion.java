@@ -147,7 +147,7 @@ public class Connexion {
 
         String sql = "SELECT * FROM `customer` WHERE `ID` LIKE '" + id_customer + "' ;";
 
-        System.out.print(sql);
+  //      System.out.print(sql);
 
         return new ConnexionSQL().requetetoString(sql, "email");
 

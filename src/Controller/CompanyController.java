@@ -132,7 +132,7 @@ public class CompanyController {
 
         String sql = " UPDATE `flights` SET `FLIGHT NO.` = '" + number + "', `TIME` = '" + Time + " ', `DEPART` = '" + depart + "', `DESTINATION` = '" + destination + "', `PRICE` = '" + price + "', `DATE` = '" + date + "' WHERE `flights`.`FLIGHT NO.` = '" + id_flights + "' ";
         new ConnexionSQL().requeteInsert(sql);
-        System.out.print(sql);
+      //  System.out.print(sql);
 
     }
 
