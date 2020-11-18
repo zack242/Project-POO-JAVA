@@ -21,6 +21,7 @@ import net.proteanit.sql.DbUtils;
  *
  * @author zack
  */
+
 public final class mainPage extends javax.swing.JFrame {
 
     Company myCompany = new Company();
@@ -159,7 +160,6 @@ public final class mainPage extends javax.swing.JFrame {
 
         username.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
-        username.setText("MR TOZY ZAKARIA");
 
         ManageBookedFlight.setBackground(new java.awt.Color(255, 153, 0));
 

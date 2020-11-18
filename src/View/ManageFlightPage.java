@@ -56,7 +56,6 @@ public class ManageFlightPage extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         Uptadedata = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         firstnameField = new javax.swing.JTextField();
@@ -121,17 +120,10 @@ public class ManageFlightPage extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setText("The flights you have booked");
 
-        jButton1.setText("Cancel");
+        jButton1.setText("DELETE");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
-            }
-        });
-
-        jButton2.setText("On verra");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -140,9 +132,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
         bookedflightLayout.setHorizontalGroup(
             bookedflightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookedflightLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(58, 363, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(45, 45, 45))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bookedflightLayout.createSequentialGroup()
@@ -162,9 +152,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addGroup(bookedflightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -200,7 +188,6 @@ public class ManageFlightPage extends javax.swing.JFrame {
         });
 
         MessageLabel.setForeground(new java.awt.Color(51, 51, 255));
-        MessageLabel.setText("Message");
 
         javax.swing.GroupLayout UptadedataLayout = new javax.swing.GroupLayout(Uptadedata);
         Uptadedata.setLayout(UptadedataLayout);
@@ -416,10 +403,6 @@ public class ManageFlightPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
 
         bookedflight.setVisible(true);
@@ -490,10 +473,10 @@ public class ManageFlightPage extends javax.swing.JFrame {
             password = passwordField.getText();
             password = new Password().hashpassword(password);
 
-            if (password.isBlank() == false) {
+            if (password.isBlank() == true) {
                 new Connexion().Updateuser(first, last, email, password, user.getId());
             }
-            if (password.isBlank() == true) {
+            if (password.isBlank() == false) {
                 new Connexion().Updateuser(first, last, email, user.getId());
             }
             MessageLabel.setText("DONE");
@@ -554,7 +537,6 @@ public class ManageFlightPage extends javax.swing.JFrame {
     private javax.swing.JPanel bookedflight;
     private javax.swing.JTextField firstnameField;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
