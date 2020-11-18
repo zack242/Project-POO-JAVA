@@ -5,9 +5,7 @@
  */
 package View;
 
-
-
-import Controller.Connexion ; 
+import Controller.Connexion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,16 +15,15 @@ import java.util.logging.Logger;
  */
 public class ConnexionPage extends javax.swing.JFrame {
 
-    Connexion con ; 
-    
-    
+    Connexion con;
+
     public ConnexionPage() {
         initComponents();
     }
-    
+
     public ConnexionPage(Connexion con) {
         initComponents();
-        this.con=con ; 
+        this.con = con;
     }
 
     /**
@@ -180,36 +177,41 @@ public class ConnexionPage extends javax.swing.JFrame {
     }//GEN-LAST:event_messageLabelMouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        
+        /////Button Login
         try {
-           // con = new Connexion();
-            String email,password;
-            boolean autorisation ;
+
+            // con = new Connexion();
+            String email, password;
+            boolean autorisation;
+
             email = emailTextField.getText();
             password = PasswordField1.getText();
-            autorisation = con.Login(email,password);
-            if(autorisation == true )
+            autorisation = con.Login(email, password);
+
+            if (autorisation == true) {
                 dispose();
-            else
+            } else {
                 messageLabel.setText(" Please try again !");
+            }
         } catch (Exception ex) {
+
             Logger.getLogger(ConnexionPage.class.getName()).log(Level.SEVERE, null, ex);
-            
+
         }
-       
-        
+
+
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void emailTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailTextFieldMouseClicked
-       
+
         emailTextField.setText("");
-        
+
 
     }//GEN-LAST:event_emailTextFieldMouseClicked
 
     private void PasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordField1MouseClicked
         PasswordField1.setText("");
-        
+
     }//GEN-LAST:event_PasswordField1MouseClicked
 
     /**

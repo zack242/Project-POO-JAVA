@@ -5,9 +5,7 @@
  */
 package View;
 
-
 import Controller.CheckoutController;
-import Controller.ConnexionSQL;
 import Controller.FlightsController;
 import Model.Company;
 import Model.Customer;
@@ -16,9 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.*;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -27,56 +23,52 @@ import net.proteanit.sql.DbUtils;
  */
 public final class mainPage extends javax.swing.JFrame {
 
- Company myCompany = new Company();
- boolean onewayselected = false ; 
-    
-        
+    Company myCompany = new Company();
+    boolean onewayselected = false;
+
     public mainPage() {
+
         initComponents();
         setResearchTable();
-        
-        
+
         /// mask all the panel  
-       ResultPanel.setVisible(false);
-       CheckoutPanel.setVisible(false);
-       PAIEMENTPANEL.setVisible(false);
-       ResultReturnPanel.setVisible(false);
-       ManageBookedFlight.setVisible(false);
-           
-        
+        ResultPanel.setVisible(false);
+        CheckoutPanel.setVisible(false);
+        PAIEMENTPANEL.setVisible(false);
+        ResultReturnPanel.setVisible(false);
+        ManageBookedFlight.setVisible(false);
+
     }
-    
-    public void setResearchTable(){ // set the header of the Jtable
-        
-        JTableHeader header = ResulteTab.getTableHeader(); 
-        header.setFont(new Font("Tahome",Font.BOLD,14));
-        
+
+    public void setResearchTable() { // set the header of the Jtable
+
+        JTableHeader header = ResulteTab.getTableHeader();
+        header.setFont(new Font("Tahome", Font.BOLD, 14));
+
         JTableHeader header4 = ResulteTab1.getTableHeader();
-        header4.setFont(new Font("Tahome",Font.BOLD,14));
-        
+        header4.setFont(new Font("Tahome", Font.BOLD, 14));
+
         JTableHeader header1 = DEPTAB.getTableHeader();
-        header1.setFont(new Font("Tahome",Font.BOLD,14));
-       
-        
+        header1.setFont(new Font("Tahome", Font.BOLD, 14));
+
         JTableHeader header2 = ARVTAB1.getTableHeader();
-        header2.setFont(new Font("Tahome",Font.BOLD,14));
-        
+        header2.setFont(new Font("Tahome", Font.BOLD, 14));
+
         //set default value of the nbr of personne
         nbrofpass.setValue(1);
-        
-         
-        
+
     }
-    
-    public void user(){
-        
+
+    public void user() {
+
         myCompany.setuser();
-        String name = myCompany.getNameuser(); 
-        username.setText("Hello  " + name );
-        
-        if(myCompany.user instanceof Customer)
-         ManageBookedFlight.setVisible(true);
-        
+        String name = myCompany.getNameuser();
+        username.setText("Hello  " + name);
+
+        if (myCompany.user instanceof Customer) {
+            ManageBookedFlight.setVisible(true);
+        }
+
     }
 
     /**
@@ -900,165 +892,159 @@ public final class mainPage extends javax.swing.JFrame {
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         //Buyyon for ROAD TOUR
-         PanelOneway1.setVisible(true);
-         ROADFLYPANEL.setVisible(true);
-         onewayselected=false;
+        PanelOneway1.setVisible(true);
+        ROADFLYPANEL.setVisible(true);
+        onewayselected = false;
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         //Button for ONE WAY 
-        onewayselected = true ; 
+        onewayselected = true;
         PanelOneway1.setVisible(false);
         ResultReturnPanel.setVisible(false);
         ROADFLYPANEL.setVisible(false);
-              
+
     }//GEN-LAST:event_jLabel17MouseClicked
 
-    
     //Do a research in the data base to get the correct flight 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-  
+
         try {
-         
-         String tmp,datedep,dep,arv;
-         ResultSet rset = null , rset2 = null;
-         
-         dep= Cityofdep1.getText(); // get the variables
-         arv= CityofAriv1.getText();
-         myCompany.numberofperson = (int) nbrofpass.getValue();
-         
-         
-         tmp = String.valueOf(DepartDate.getDate());
-         
-         String[] date = tmp.split(" ");
-         datedep = date[2] + date[1] + date[5] ;
-         
-         rset = new FlightsController(). GetFlight(dep,arv,datedep);//use the methode to get date
-         ResulteTab.setModel(DbUtils.resultSetToTableModel(rset)); 
-         
-         ///////////////////////////// Road tours selected //////////////////////////////////////
-        if(onewayselected == false) {
-        //We inverse the deparature and the destination 
-        tmp = dep ; 
-        dep = arv ; 
-        arv = tmp ; 
-        
-        tmp = String.valueOf(ReturnDate.getDate());
-         
-         date = tmp.split(" ");
-         datedep = date[2] + date[1] + date[5] ;
-        
-         rset2 = new FlightsController(). GetFlight(dep,arv,datedep); // we display the result in the second 
-         ResulteTab1.setModel(DbUtils.resultSetToTableModel(rset2)); 
-         
-       
-         }
-            
-         ResearchPanel1.setVisible(false);
-         ResultPanel.setVisible(true);
-         
-         
-         
-     } catch (SQLException ex) {
-         
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-         
-     }
-        
+
+            String tmp, datedep, dep, arv;
+            ResultSet rset = null, rset2 = null;
+
+            dep = Cityofdep1.getText(); // get the variables
+            arv = CityofAriv1.getText();
+            myCompany.numberofperson = (int) nbrofpass.getValue();
+
+            tmp = String.valueOf(DepartDate.getDate());
+
+            String[] date = tmp.split(" ");
+            datedep = date[2] + date[1] + date[5];
+
+            rset = new FlightsController().GetFlight(dep, arv, datedep);//use the methode to get date
+            ResulteTab.setModel(DbUtils.resultSetToTableModel(rset));
+
+            ///////////////////////////// Road tours selected //////////////////////////////////////
+            if (onewayselected == false) {
+                //We inverse the deparature and the destination 
+                tmp = dep;
+                dep = arv;
+                arv = tmp;
+
+                tmp = String.valueOf(ReturnDate.getDate());
+
+                date = tmp.split(" ");
+                datedep = date[2] + date[1] + date[5];
+
+                rset2 = new FlightsController().GetFlight(dep, arv, datedep); // we display the result in the second 
+                ResulteTab1.setModel(DbUtils.resultSetToTableModel(rset2));
+
+            }
+
+            ResearchPanel1.setVisible(false);
+            ResultPanel.setVisible(true);
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void ResulteTabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResulteTabMouseClicked
-      
-     try {
-         
-         int row = ResulteTab.getSelectedRow();
-         String numberfly = (String) ResulteTab.getModel().getValueAt(row,0);
-         System.out.print(numberfly);
-         
-         myCompany.addFlight(numberfly,0);
-         DEPTAB.setModel(DbUtils.resultSetToTableModel(new FlightsController(). GetFlight(numberfly)));
-         
-         //////////////////////ROAD TOUR ////////////////////////////
-         if(onewayselected==false){
-             
-            ResultPanel.setVisible(false);
-            ResultReturnPanel.setVisible(true);
-                
-         }else {
-          
-             ResultPanel.setVisible(false);
-             CheckoutPanel.setVisible(true); 
-             new CheckoutController().calculTotal(myCompany);
-             total.setText(Double.toString(myCompany.subTotal));
-             nbrofpersonne.setText("FOR "+ myCompany.numberofperson +" PEOPLE") ;
-             
-         }
-             
-         
-         ///////////////////////////////////////////////////////////
-        
-         
-     } catch (SQLException ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     } catch (Exception ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     }
-     
+
+        try {
+
+            int row = ResulteTab.getSelectedRow();
+            String numberfly = (String) ResulteTab.getModel().getValueAt(row, 0);
+            System.out.print(numberfly);
+
+            myCompany.addFlight(numberfly, 0);
+            DEPTAB.setModel(DbUtils.resultSetToTableModel(new FlightsController().GetFlight(numberfly)));
+
+            //////////////////////ROAD TOUR ////////////////////////////
+            if (onewayselected == false) {
+
+                ResultPanel.setVisible(false);
+                ResultReturnPanel.setVisible(true);
+
+            } else {
+
+                ResultPanel.setVisible(false);
+                CheckoutPanel.setVisible(true);
+                new CheckoutController().calculTotal(myCompany);
+                total.setText(Double.toString(myCompany.subTotal));
+                nbrofpersonne.setText("FOR " + myCompany.numberofperson + " PEOPLE");
+
+            }
+
+            ///////////////////////////////////////////////////////////
+        } catch (SQLException ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_ResulteTabMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-     ///Button confirme    
-     try {
-         myCompany.buy();
-         
-         new CheckoutPage(myCompany.subTotal,myCompany.Total).setVisible(true);
-         
-         CheckoutPanel.setVisible(false);
-         PAIEMENTPANEL.setVisible(true);
-         ResultReturnPanel.setVisible(false);
-         
-     } catch (Exception ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     }
+        ///Button confirme    
+        try {
+            
+            myCompany.buy();
+
+            new CheckoutPage(myCompany.subTotal, myCompany.Total).setVisible(true);
+
+            CheckoutPanel.setVisible(false);
+            PAIEMENTPANEL.setVisible(true);
+            ResultReturnPanel.setVisible(false);
+
+        } catch (Exception ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        
+
         new ConnexionPage(myCompany.conn).setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-       ///Button of the return to the main page      
-       //reset 
-       myCompany.reset();
-       onewayselected = false ; 
-       
-      
-         
-       ResultPanel.setVisible(false);
-       CheckoutPanel.setVisible(false);
-       PAIEMENTPANEL.setVisible(false);
-       ResultReturnPanel.setVisible(false);
-       ResearchPanel1.setVisible(true);
+        ///Button of the return to the main page      
+        //reset 
+        myCompany.reset();
+        onewayselected = false;
+
+        ResultPanel.setVisible(false);
+        CheckoutPanel.setVisible(false);
+        PAIEMENTPANEL.setVisible(false);
+        ResultReturnPanel.setVisible(false);
+        ResearchPanel1.setVisible(true);
+        PanelOneway1.setVisible(true);
         
+        
+
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-       user();
+        user();
     }//GEN-LAST:event_formMouseEntered
 
     private void Cityofdep1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cityofdep1MouseClicked
-        
+
         Cityofdep1.setText("");
-        
+
     }//GEN-LAST:event_Cityofdep1MouseClicked
 
     private void CityofAriv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityofAriv1ActionPerformed
         // a supptimer
         CityofAriv1.setText("");
-        
+
     }//GEN-LAST:event_CityofAriv1ActionPerformed
 
     private void CityofAriv1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CityofAriv1MouseClicked
@@ -1066,61 +1052,53 @@ public final class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CityofAriv1MouseClicked
 
     private void ResulteTab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResulteTab1MouseClicked
-     try {
-         ///////////////////ROAD TOUR RESULT ///////////////////
-         int row = ResulteTab1.getSelectedRow();
-         String numberfly = (String) ResulteTab1.getModel().getValueAt(row,0);
-         System.out.print(numberfly);
-         
-         myCompany.addFlight(numberfly,1);
-         ARVTAB1.setModel(DbUtils.resultSetToTableModel(new FlightsController(). GetFlight(numberfly)));
-         
-         new CheckoutController().calculTotal(myCompany);
-         total.setText(Double.toString(myCompany.subTotal));
-         nbrofpersonne.setText("FOR "+ myCompany.numberofperson +" PEOPLE") ;
-         
-         ResultReturnPanel.setVisible(false);
-         CheckoutPanel.setVisible(true);
-         
-     
-     
-     
-     } catch (SQLException ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     } catch (Exception ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     }
-        
-        
-         
-        
-        
+          ///////////////////ROAD TOUR RESULT ///////////////////
+          
+        try {
+          
+            int row = ResulteTab1.getSelectedRow();
+            String numberfly = (String) ResulteTab1.getModel().getValueAt(row, 0);
+            System.out.print(numberfly);
+
+            myCompany.addFlight(numberfly, 1);
+            ARVTAB1.setModel(DbUtils.resultSetToTableModel(new FlightsController().GetFlight(numberfly)));
+
+            new CheckoutController().calculTotal(myCompany);
+            total.setText(Double.toString(myCompany.subTotal));
+            nbrofpersonne.setText("FOR " + myCompany.numberofperson + " PEOPLE");
+
+            ResultReturnPanel.setVisible(false);
+            CheckoutPanel.setVisible(true);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_ResulteTab1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-     try {
-         
-         // Button of manage the flight ;
-         new ManageFlightPage((Customer) myCompany.user).setVisible(true);
-         //hide();
-         
-         
-     } catch (Exception ex) {
-         Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
-     }
+        // Button of manage the flight ;
         
-        
+        try {
+            new ManageFlightPage((Customer) myCompany.user).setVisible(true);
+            //hide();
+
+        } catch (Exception ex) {
+            Logger.getLogger(mainPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // Button to get connected to employee 
+        
         new EmployePage().setVisible(true);
         dispose();
-       
-        
-        
-        
-        
+
     }//GEN-LAST:event_jLabel5MouseClicked
 
     /**

@@ -20,28 +20,24 @@ import net.proteanit.sql.DbUtils;
  */
 public class ManageFlightPage extends javax.swing.JFrame {
 
-    Customer user ; 
- 
-    
-    
+    Customer user;
+
     public ManageFlightPage() {
         initComponents();
         Uptadedata.setVisible(false);
-        
-        
-        
+
     }
-    
-     public ManageFlightPage(Customer user) throws Exception {
-         initComponents();
-         this.user = user ; 
-         
-        JTableHeader header = jTable1.getTableHeader(); 
-        header.setFont(new Font("Tahome",Font.BOLD,14));
-         
-         
-         jTable1.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight()));
-         Uptadedata.setVisible(false);
+
+    public ManageFlightPage(Customer user) throws Exception {
+
+        initComponents();
+        this.user = user;
+
+        JTableHeader header = jTable1.getTableHeader();
+        header.setFont(new Font("Tahome", Font.BOLD, 14));
+
+        jTable1.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight()));
+        Uptadedata.setVisible(false);
     }
 
     /**
@@ -72,6 +68,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        MessageLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -103,7 +100,6 @@ public class ManageFlightPage extends javax.swing.JFrame {
             }
         ));
         jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        jTable1.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         jTable1.setFocusTraversalKeysEnabled(false);
         jTable1.setFocusable(false);
         jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
@@ -203,6 +199,9 @@ public class ManageFlightPage extends javax.swing.JFrame {
             }
         });
 
+        MessageLabel.setForeground(new java.awt.Color(51, 51, 255));
+        MessageLabel.setText("Message");
+
         javax.swing.GroupLayout UptadedataLayout = new javax.swing.GroupLayout(Uptadedata);
         Uptadedata.setLayout(UptadedataLayout);
         UptadedataLayout.setHorizontalGroup(
@@ -225,14 +224,17 @@ public class ManageFlightPage extends javax.swing.JFrame {
                         .addComponent(lastnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(46, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UptadedataLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(181, Short.MAX_VALUE)
                 .addGroup(UptadedataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UptadedataLayout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(141, 141, 141))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UptadedataLayout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(203, 203, 203))))
+                        .addGap(203, 203, 203))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UptadedataLayout.createSequentialGroup()
+                        .addComponent(MessageLabel)
+                        .addGap(205, 205, 205))))
         );
         UptadedataLayout.setVerticalGroup(
             UptadedataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,7 +256,9 @@ public class ManageFlightPage extends javax.swing.JFrame {
                 .addGroup(UptadedataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MessageLabel)
+                .addGap(10, 10, 10)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(103, Short.MAX_VALUE))
         );
@@ -417,99 +421,95 @@ public class ManageFlightPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
-       bookedflight.setVisible(true); 
-       Uptadedata.setVisible(false);
-       
+
+        bookedflight.setVisible(true);
+        Uptadedata.setVisible(false);
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       // Button account 
-       firstnameField.setText(user.getName());
-       lastnameField.setText(user.getLastName());
-       
-       
-        try { 
-            
+        // Button account 
+
+        firstnameField.setText(user.getName());
+        lastnameField.setText(user.getLastName());
+
+        try {
+
             String email = new Connexion().getuseremail(user.getId());
             EmailField.setText(email);
             System.out.print(email);
-            
-        } catch (Exception ex){
+
+        } catch (Exception ex) {
             Logger.getLogger(ManageFlightPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-          
-       /////////////////////
-       bookedflight.setVisible(false); 
-       Uptadedata.setVisible(true);
+
+        ///////////////////////////
+        bookedflight.setVisible(false);
+        Uptadedata.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         dispose();
-        
+
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         ///TAB OF THE RESULT BOOKED FLIGHTS
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        //button to cancel a flights
+
         try {
-            //button to cancel a flights
+
             int row = jTable1.getSelectedRow();
-            String numberfly = (String) jTable1.getModel().getValueAt(row,0);
-            
+            String numberfly = (String) jTable1.getModel().getValueAt(row, 0);
+
             user.deleteFlights(numberfly);
-            
             jTable1.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight()));
-            
-            
+
         } catch (Exception ex) {
             Logger.getLogger(ManageFlightPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
-       
- 
-        
+
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        ///Button to update the flight 
+
         try {
-            
-            String first,last,email,password ;
+
+            String first, last, email, password;
             first = firstnameField.getText();
             last = lastnameField.getText();
             email = EmailField.getText();
-            
+
             password = passwordField.getText();
             password = new Password().hashpassword(password);
-            
-            
-            
-            if(password.isEmpty()==false)
-            new Connexion().Updateuser(first, last, email, password,user.getId());
-            if(password.isEmpty()==true)
-            new Connexion().Updateuser(first, last, email,user.getId()); 
-            
-            
-            
-            
+
+            if (password.isBlank() == false) {
+                new Connexion().Updateuser(first, last, email, password, user.getId());
+            }
+            if (password.isBlank() == true) {
+                new Connexion().Updateuser(first, last, email, user.getId());
+            }
+            MessageLabel.setText("DONE");
+
         } catch (Exception ex) {
+
             Logger.getLogger(ManageFlightPage.class.getName()).log(Level.SEVERE, null, ex);
+            MessageLabel.setText(ex.getMessage());
+
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void passwordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseClicked
-        
+
     }//GEN-LAST:event_passwordFieldMouseClicked
 
     /**
@@ -549,6 +549,7 @@ public class ManageFlightPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailField;
+    private javax.swing.JLabel MessageLabel;
     private javax.swing.JPanel Uptadedata;
     private javax.swing.JPanel bookedflight;
     private javax.swing.JTextField firstnameField;

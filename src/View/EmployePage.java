@@ -6,33 +6,26 @@
 package View;
 
 import Controller.Connexion;
-import Controller.ConnexionSQL;
 import Controller.JFREECHART;
 import Model.Employe;
 import Model.Flight;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.proteanit.sql.DbUtils;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
 
 /**
  *
  * @author zack
  */
+
 public class EmployePage extends javax.swing.JFrame {
 
-    Employe user ; 
-    
-    
+    Employe user;
+
     public EmployePage() {
+        
         initComponents();
-        
-        
-        
-        
+
         ////////////////////////////
         ConnexionPage.setVisible(true);
         CustomerDataPage.setVisible(false);
@@ -40,9 +33,8 @@ public class EmployePage extends javax.swing.JFrame {
         BookedFlightPage.setVisible(false);
         MenuBooked.setVisible(false);
         MenuCustomer.setVisible(false);
-        MenuUpdate.setVisible(false);  
-       
-        
+        MenuUpdate.setVisible(false);
+
     }
 
     /**
@@ -64,6 +56,7 @@ public class EmployePage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         message = new javax.swing.JLabel();
+        messageloginLabel = new javax.swing.JLabel();
         UpdateFlightsPage = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Flights = new javax.swing.JTable();
@@ -168,6 +161,9 @@ public class EmployePage extends javax.swing.JFrame {
 
         message.setForeground(new java.awt.Color(0, 51, 255));
 
+        messageloginLabel.setForeground(new java.awt.Color(0, 0, 255));
+        messageloginLabel.setText("Message");
+
         javax.swing.GroupLayout ConnexionPageLayout = new javax.swing.GroupLayout(ConnexionPage);
         ConnexionPage.setLayout(ConnexionPageLayout);
         ConnexionPageLayout.setHorizontalGroup(
@@ -196,7 +192,9 @@ public class EmployePage extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ConnexionPageLayout.createSequentialGroup()
                         .addGap(232, 232, 232)
-                        .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(messageloginLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ConnexionPageLayout.setVerticalGroup(
@@ -220,8 +218,10 @@ public class EmployePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(messageloginLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
+                .addGap(108, 108, 108))
         );
 
         jLayeredPane1.add(ConnexionPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 490));
@@ -575,14 +575,14 @@ public class EmployePage extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(numberofpersonnes))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(totalflights, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(Numberofreservation, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(numberofpersonnes)))
+                .addComponent(Numberofreservation, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -766,15 +766,17 @@ public class EmployePage extends javax.swing.JFrame {
             ToolsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MenuUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(MenuCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(MenuBooked, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(MenujPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(ToolsPanelLayout.createSequentialGroup()
+                .addComponent(MenujPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(MenuBooked, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ToolsPanelLayout.setVerticalGroup(
             ToolsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ToolsPanelLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(MenuUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(MenuCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(MenuBooked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -813,13 +815,15 @@ public class EmployePage extends javax.swing.JFrame {
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void PasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordField1MouseClicked
+       
         PasswordField1.setText("");
 
     }//GEN-LAST:event_PasswordField1MouseClicked
 
     private void messageLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_messageLabelMouseClicked
-        
+
         dispose();
+        
     }//GEN-LAST:event_messageLabelMouseClicked
 
     private void departActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departActionPerformed
@@ -827,76 +831,71 @@ public class EmployePage extends javax.swing.JFrame {
     }//GEN-LAST:event_departActionPerformed
 
     private void UpPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpPanelMouseClicked
-       //Uptade flight buttoon 
-       
+        //Uptade flight buttoon 
+
         ConnexionPage.setVisible(false);
         UpdateFlightsPage.setVisible(true);
         CustomerDataPage.setVisible(false);
         BookedFlightPage.setVisible(false);
-        
+
     }//GEN-LAST:event_UpPanelMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        
         try {
+            
             /// Customer date  button page
             CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
-            
-        } catch (Exception ex) { 
-            
+
+        } catch (Exception ex) {
+
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
-            
+
         }
-         
-      ///////////////////////////
+
+        ////////////////////////////////
         ConnexionPage.setVisible(false);
         CustomerDataPage.setVisible(true);
         UpdateFlightsPage.setVisible(false);
         BookedFlightPage.setVisible(false);
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-       ///Booked Flight PAge
-       int numbeofperson=0;
-       int numberofrow = 0 ;
-       int total = 0 ; 
+        ///Booked Flight PAge
         
-       try {
-           
+        int numbeofperson = 0;
+        int numberofrow = 0;
+        int total = 0;
+
+        try {
+
             BookedFlightTab.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight()));
             numberofrow = BookedFlightTab.getRowCount();
-            
+
             Numberofreservation.setText(String.valueOf(numberofrow));
-                  
-           for(int i = 0 ; i < numberofrow ; i++ ){
-               numbeofperson += (int) BookedFlightTab.getModel().getValueAt(i,3) ; 
-               total += (int) BookedFlightTab.getModel().getValueAt(i,3) * (int) BookedFlightTab.getModel().getValueAt(i,4);
-               
-           }
-                 
-           numberofpersonnes.setText( String.valueOf(numbeofperson));
-           totalflights.setText(String.valueOf(total));
-          
+
+            for (int i = 0; i < numberofrow; i++) {
+                numbeofperson += (int) BookedFlightTab.getModel().getValueAt(i, 3);
+                total += (int) BookedFlightTab.getModel().getValueAt(i, 3) * (int) BookedFlightTab.getModel().getValueAt(i, 4);
+
+            }
+
+            numberofpersonnes.setText(String.valueOf(numbeofperson));
+            totalflights.setText(String.valueOf(total));
+
         } catch (Exception ex) {
-            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);     
+            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
         //////////////////////////////////////////////////////
-        
-       
       
-       
-       
-       
-       
-       
-       
-       //////////////////////////////
         ConnexionPage.setVisible(false);
         CustomerDataPage.setVisible(false);
         UpdateFlightsPage.setVisible(false);
         BookedFlightPage.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -905,48 +904,48 @@ public class EmployePage extends javax.swing.JFrame {
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
         // Button connexion 
-        String email , password ;
-        
+        String email, password;
+
         email = emailTextField.getText();
-        password = PasswordField1.getText(); 
-        
+        password = PasswordField1.getText();
+
         try {
-            if(new Connexion().LoginEmploye(email,password) == true ) {
-                
+            
+            if (new Connexion().LoginEmploye(email, password) == true) {
+
                 ConnexionPage.setVisible(false);
-                UpdateFlightsPage.setVisible(true);              
+                UpdateFlightsPage.setVisible(true);
                 MenuBooked.setVisible(true);
                 MenuCustomer.setVisible(true);
                 MenuUpdate.setVisible(true);
-                
+
                 user = new Connexion().setEmploye(email);
                 System.out.print(user.getName());
-                
+
                 Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
-                               
-                
-            }else {
-                
-                message.setText("Please try again !");
-                
+
+            } else {
+
+               messageloginLabel.setText("Please try again !");
+
             }
         } catch (Exception ex) {
+            
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
-           
+
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_loginMouseClicked
 
     private void FlightsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlightsMouseClicked
         // Table of all the flights 
-         int row = Flights.getSelectedRow();
-         String numberfly = (String) Flights.getModel().getValueAt(row,0);
-         
+        
+        int row = Flights.getSelectedRow();
+        String numberfly = (String) Flights.getModel().getValueAt(row, 0);
+
         try {
-            
+
             user.setFlights(numberfly);
             depart.setText(user.selectedFlights.getdepart());
             Destination.setText(user.selectedFlights.getdestination());
@@ -954,167 +953,166 @@ public class EmployePage extends javax.swing.JFrame {
             price.setText(String.valueOf(user.selectedFlights.getPrice()));
             number.setText(user.selectedFlights.getNumber());
             Date.setText(user.selectedFlights.getDate());
-             
-            
+
         } catch (Exception ex) {
+            
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_FlightsMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // Add flight button 
-        String depart,Destination,time,date,number;
-        double price ; 
-        
-       
-        depart = this.depart.getText();
-        Destination = this.Destination.getText();
-        time =  Time.getText();
-        
-        price = Double.parseDouble(this.price.getText());
-        number = this.number.getText();
-        date = this.Date.getText();
-        
-   if(number.isEmpty()  || depart.isEmpty() || Destination.isEmpty() || time.isEmpty() ||  date.isEmpty() )
-    messageFlights.setText("Plese try again");
-   else {
-           
-       Flight flight = new Flight(depart,Destination,time,number,date,price);
-       messageFlights.setText("Flights has been added ");
-       try {
-           
-            user.addFlights(flight);
-            Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
-            messageFlights.setText(ex.getMessage());
-        }
-           
-    }//GEN-LAST:event_jButton1MouseClicked
-}
-    private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numberActionPerformed
+        String depart, Destination, time, date, number;
+        double price;
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // boutton of update flights ;        
-        String depart,Destination,time,date,number;
-        double price ; 
-        
-       
         depart = this.depart.getText();
         Destination = this.Destination.getText();
-        time =  Time.getText();
-        
+        time = Time.getText();
+
         price = Double.parseDouble(this.price.getText());
         number = this.number.getText();
         date = this.Date.getText();
-        
-        if(number.isEmpty()  || depart.isEmpty() || Destination.isEmpty() || time.isEmpty() ||  date.isEmpty() )
-        messageFlights.setText("Plese try again");
+
+        if (number.isEmpty() || depart.isEmpty() || Destination.isEmpty() || time.isEmpty() || date.isEmpty())
+            messageFlights.setText("Plese try again");
         else {
+
+            Flight flight = new Flight(depart, Destination, time, number, date, price);
+            messageFlights.setText("Flights has been added ");
             
-        Flight flight = new Flight(depart,Destination,time,number,date,price);
-        
-        messageFlights.setText("Flights has been updtadeted ");
-        
             try {
-                
-                user.UpdateFlights(flight);
+
+                user.addFlights(flight);
                 Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
-                
+
             } catch (Exception ex) {
                 
                 Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
                 messageFlights.setText(ex.getMessage());
                 
             }
-        
-        
-         }
-        
-        
-        
-        
+
+    }//GEN-LAST:event_jButton1MouseClicked
+    }
+    private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numberActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // boutton of update flights ;        
+        String depart, Destination, time, date, number;
+        double price;
+
+        depart = this.depart.getText();
+        Destination = this.Destination.getText();
+        time = Time.getText();
+
+        price = Double.parseDouble(this.price.getText());
+        number = this.number.getText();
+        date = this.Date.getText();
+
+        if (number.isEmpty() || depart.isEmpty() || Destination.isEmpty() || time.isEmpty() || date.isEmpty()) {
+            messageFlights.setText("Plese try again");
+        } else {
+
+            Flight flight = new Flight(depart, Destination, time, number, date, price);
+
+            messageFlights.setText("Flights has been updtadeted ");
+
+            try {
+
+                user.UpdateFlights(flight);
+                Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
+
+            } catch (Exception ex) {
+
+                Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+                messageFlights.setText(ex.getMessage());
+
+            }
+
+        }
+
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // Delete button flight
         try {
-            // Delete button flight
+           
             user.DeleteFlights();
-            messageFlights.setText("Operation Succes "); 
+            messageFlights.setText("Operation Succes ");
             Flights.setModel(DbUtils.resultSetToTableModel(user.getFlights()));
-                       
-        } catch (Exception ex){
-            
+
+        } catch (Exception ex) {
+
             messageFlights.setText(ex.getMessage());
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-        
-          
+
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void CustomersTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CustomersTableMouseClicked
         // clicked customers table 
+        
         int row = CustomersTable.getSelectedRow();
-        int id_customer = (int) CustomersTable.getModel().getValueAt(row,5);
-       
+        int id_customer = (int) CustomersTable.getModel().getValueAt(row, 5);
 
         try {
-            
+
             BookedflightsTable.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight(id_customer)));
-          
-           
+
+        } catch (Exception ex){
             
-        } catch (Exception ex) {
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-        
-        
+
 
     }//GEN-LAST:event_CustomersTableMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // Button to delete customer 
-         int row = CustomersTable.getSelectedRow();
-         int id_customer = (int) CustomersTable.getModel().getValueAt(row,5);
-         
+        
+        int row = CustomersTable.getSelectedRow();
+        int id_customer = (int) CustomersTable.getModel().getValueAt(row, 5);
+
         try {
+            
             user.deleteCustomer(id_customer);
             CustomersTable.setModel(DbUtils.resultSetToTableModel(user.getCustomer()));
-            
+
         } catch (Exception ex) {
+            
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-        
+
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       
-          // Button delete booked flight
-            
-            int row = BookedflightsTable.getSelectedRow();
-            int id_customer = (int) BookedflightsTable.getModel().getValueAt(row,1);
-            String number = (String) BookedflightsTable.getModel().getValueAt(row,2);
-           
-         try {   
-             
+        // Button delete booked flight
+        
+        int row = BookedflightsTable.getSelectedRow();
+        int id_customer = (int) BookedflightsTable.getModel().getValueAt(row, 1);
+        String number = (String) BookedflightsTable.getModel().getValueAt(row, 2);
+
+        try {
+
             user.deleteFlights(id_customer, number);
             BookedflightsTable.setModel(DbUtils.resultSetToTableModel(user.getBookedFlight(id_customer)));
-            
+
         } catch (Exception ex) {
+            
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1126,19 +1124,24 @@ public class EmployePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-    // total sales by flighs
-           
-            new JFREECHART().ghraph(BookedFlightTab);
-        
+        // total sales by flighs
+
+        new JFREECHART().ghraph(BookedFlightTab);
+
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+       
         try {
+            
             new JFREECHART().ghraph2(BookedFlightTab);
+            
         } catch (Exception ex) {
+            
             Logger.getLogger(EmployePage.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
-     
+
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -1238,6 +1241,7 @@ public class EmployePage extends javax.swing.JFrame {
     private javax.swing.JLabel message;
     private javax.swing.JLabel messageFlights;
     private javax.swing.JLabel messageLabel;
+    private javax.swing.JLabel messageloginLabel;
     private javax.swing.JTextField number;
     private javax.swing.JLabel numberofpersonnes;
     private javax.swing.JTextField price;

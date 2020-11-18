@@ -5,9 +5,7 @@
  */
 package View;
 
-import Controller.Connexion; 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Controller.Connexion;
 
 /**
  *
@@ -15,15 +13,15 @@ import java.util.logging.Logger;
  */
 public class RegisterPage extends javax.swing.JFrame {
 
-    Connexion con ; 
-    
+    Connexion con;
+
     public RegisterPage() {
         initComponents();
     }
-    
+
     public RegisterPage(Connexion con) {
         initComponents();
-        this.con = con ; 
+        this.con = con;
     }
 
     /**
@@ -226,58 +224,58 @@ public class RegisterPage extends javax.swing.JFrame {
     }//GEN-LAST:event_firstname_FieldActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        String first,last,email,tmp,password,hash,birthday;
-        boolean autorisation ;
-      //  Connexion con = new Connexion();
        
+        String first, last, email, tmp, password, hash, birthday;
         
-        first =  firstname_Field.getText();
+        boolean autorisation;
+        //  Connexion con = new Connexion();
+
+        first = firstname_Field.getText();
         last = lastname_Field.getText();
         email = EmailID_Field.getText();
         tmp = String.valueOf(jDateChooser1.getDate());
         password = jPasswordField1.getText();
-               
+
         String[] date = tmp.split(" ");
-      // We split the date to get only what we want 
-        birthday = date[5] ;
+        // We split the date to get only what we want 
+        birthday = date[5];
+       
         try {
-            autorisation = con.Signup(first, last, birthday, email, password); 
-             dispose(); 
+            
+            autorisation = con.Signup(first, last, birthday, email, password);
+            dispose();
+            
         } catch (Exception ex) {
-             message.setText("Please try again"); 
-            System.out.print(ex.getMessage());
+            message.setText("Please try again");
+           
         }
-          
-          
-         
-        
+
+
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void firstname_FieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstname_FieldMouseClicked
-       firstname_Field.setText("");
-        
+        firstname_Field.setText("");
+
     }//GEN-LAST:event_firstname_FieldMouseClicked
 
     private void lastname_FieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastname_FieldMouseClicked
-        
-      lastname_Field.setText("");
-        
+
+        lastname_Field.setText("");
+
     }//GEN-LAST:event_lastname_FieldMouseClicked
 
     private void EmailID_FieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmailID_FieldMouseClicked
-        
+
         EmailID_Field.setText("");
-        
+
     }//GEN-LAST:event_EmailID_FieldMouseClicked
 
     private void jPasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseClicked
-        
+
         jPasswordField1.setText("");
-        
+
     }//GEN-LAST:event_jPasswordField1MouseClicked
 
-  
-    
     /**
      * @param args the command line arguments
      */

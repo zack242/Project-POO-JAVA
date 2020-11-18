@@ -14,31 +14,31 @@ public class CheckoutPage extends javax.swing.JFrame {
     /**
      * Creates new form CheckoutPage
      */
+    
+    ///Double constructor 
     public CheckoutPage() {
         initComponents();
     }
-    public CheckoutPage(double subtotal,double total) {
+
+    public CheckoutPage(double subtotal, double total) {
         initComponents();
-        setTotal(subtotal,total);
+        setTotal(subtotal, total);
     }
-    
-    
-    public void setTotal(double subTotal , double Total){
-       
-         String tmp = String.valueOf(subTotal);
-         subtotalLabel.setText(tmp + "€");
-        
-        if(Total == subTotal)
-        {
-         customer.setVisible(false);
-        
-        }else{
-            
+
+    public void setTotal(double subTotal, double Total) {
+
+        String tmp = String.valueOf(subTotal);
+        subtotalLabel.setText(tmp + "€");
+
+        if (Total == subTotal) {
+            customer.setVisible(false);
+
+        } else {
+
             totalLabel.setText(String.valueOf(Total) + "€");
-            
+
         }
-        
-       
+
     }
 
     /**
@@ -192,8 +192,8 @@ public class CheckoutPage extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(93, 93, 93))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(subtotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87))))
+                        .addComponent(subtotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(138, 138, 138))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,12 +236,12 @@ public class CheckoutPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
-  
-       jTextField1.setText("");
+
+        jTextField1.setText("");
     }//GEN-LAST:event_jTextField1MouseClicked
 
     private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked
-       jTextField2.setText("");
+        jTextField2.setText("");
     }//GEN-LAST:event_jTextField2MouseClicked
 
     private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked

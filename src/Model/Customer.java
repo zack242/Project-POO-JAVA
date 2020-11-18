@@ -7,7 +7,7 @@ package Model;
 
 import Controller.CompanyController;
 import java.sql.ResultSet;
-import java.util.Arrays;
+
 
 /**
  *
@@ -25,6 +25,7 @@ public class Customer extends Person implements discount {
     }
 
     /////////////////////GET ////////////////////////////
+    
     public int getId() {
 
         return id_customer;
