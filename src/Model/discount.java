@@ -9,12 +9,14 @@ package Model;
  *
  * @author zack
  */
+//////Interface for discount ///////////////
+
 public interface discount {
-    
-   final  double DSC_REGULAR = 0.05 ; 
-            
-   final  double DSC_SENIOR = 0.10 ;          
-            
-   final  double DSC_CHILDREN = 0.15 ;       
-     
+
+    final double DSC_REGULAR = 0.05;
+
+    final double DSC_SENIOR = 0.10;
+
+    final double DSC_CHILDREN = 0.15;
+
 }
