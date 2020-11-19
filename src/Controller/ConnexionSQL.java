@@ -40,10 +40,10 @@ public final class ConnexionSQL {
 
              String urlDatabase = "jdbc:mysql://mysql-zack242.alwaysdata.net/zack242_projet_ing3?verifyServerCertificate=false&useSSL=true";
            // String urlDatabase = "jdbc:mysql://localhost:8889/" + "projet_ing3?verifyServerCertificate=false&useSSL=true";
-            Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.jdbc.Driver");
 
             conn = DriverManager.getConnection(urlDatabase, "zack242", "0661150322");
-             System.out.print("Connexion reussi ");
+           //  System.out.print("Connexion reussi ");
             stmt = conn.createStatement();
             return conn;
 
