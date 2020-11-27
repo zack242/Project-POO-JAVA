@@ -94,7 +94,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /user.png"/>
+              <Image iconType="3" name="/project/user.png"/>
             </Property>
           </Properties>
           <Events>
@@ -104,7 +104,7 @@
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /home-2.png"/>
+              <Image iconType="3" name="/project/home-2.png"/>
             </Property>
           </Properties>
           <Events>
@@ -152,7 +152,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /airport.png"/>
+                  <Image iconType="3" name="/project/airport.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -164,7 +164,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /information-button.png"/>
+              <Image iconType="3" name="/project/information-button.png"/>
             </Property>
           </Properties>
           <Events>
@@ -516,7 +516,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /Sans titre.png"/>
+                          <Image iconType="3" name="/project/Sans titre.png"/>
                         </Property>
                       </Properties>
                     </Component>

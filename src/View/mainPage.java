@@ -144,14 +144,14 @@ public final class mainPage extends javax.swing.JFrame {
 
         ToolsPanel.setBackground(new java.awt.Color(255, 153, 0));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /user.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/user.png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /home-2.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/home-2.png"))); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -163,7 +163,7 @@ public final class mainPage extends javax.swing.JFrame {
 
         ManageBookedFlight.setBackground(new java.awt.Color(255, 153, 0));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /airport.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/airport.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -187,7 +187,7 @@ public final class mainPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /information-button.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/information-button.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -328,7 +328,7 @@ public final class mainPage extends javax.swing.JFrame {
                 .addComponent(PanelOneway1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /Sans titre.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Sans titre.png"))); // NOI18N
 
         jLabel15.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /Sans titre1.png")); // NOI18N
 

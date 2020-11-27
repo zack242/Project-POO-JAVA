@@ -297,7 +297,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /44948.png"/>
+                      <Image iconType="3" name="/project/44948.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -426,7 +426,7 @@
                   <Font name="Lucida Grande" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /plane.png"/>
+                  <Image iconType="3" name="/project/plane.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" BOOKED FLIGHT"/>
               </Properties>
@@ -466,7 +466,7 @@
                   <Font name="Lucida Grande" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /user copie.png"/>
+                  <Image iconType="3" name="/project/user copie.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="  ACCOUNT"/>
               </Properties>
@@ -506,7 +506,7 @@
                   <Font name="Lucida Grande" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /home-3.png"/>
+                  <Image iconType="3" name="/project/home-3.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" HOME PAGE"/>
               </Properties>

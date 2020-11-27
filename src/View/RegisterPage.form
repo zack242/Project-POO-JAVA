@@ -136,14 +136,14 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /email.png"/>
+              <Image iconType="3" name="/project/email.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /padlock.png"/>
+              <Image iconType="3" name="/project/padlock.png"/>
             </Property>
           </Properties>
         </Component>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /user copie.png"/>
+              <Image iconType="3" name="/project/user copie.png"/>
             </Property>
           </Properties>
         </Component>

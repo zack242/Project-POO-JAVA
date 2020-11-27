@@ -134,7 +134,7 @@ public class EmployePage extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /44948.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/44948.png"))); // NOI18N
 
         messageLabel.setForeground(new java.awt.Color(51, 51, 255));
         messageLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,9 +143,9 @@ public class EmployePage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /email.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/user copie.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /padlock.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/padlock.png"))); // NOI18N
 
         login.setText("Login");
         login.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -205,7 +205,7 @@ public class EmployePage extends javax.swing.JFrame {
                 .addGroup(ConnexionPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ConnexionPageLayout.createSequentialGroup()
                         .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 16, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(PasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ConnexionPageLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)

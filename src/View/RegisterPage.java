@@ -70,9 +70,9 @@ public class RegisterPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /email.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/email.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /padlock.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/padlock.png"))); // NOI18N
 
         lastname_Field.setText("Last name");
         lastname_Field.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,7 +104,7 @@ public class RegisterPage extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Create new account");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /user copie.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/user copie.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 51));
 

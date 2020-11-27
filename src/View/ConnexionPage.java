@@ -68,7 +68,7 @@ public class ConnexionPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /44948.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/44948.png"))); // NOI18N
 
         messageLabel.setForeground(new java.awt.Color(51, 51, 255));
         messageLabel.setText("Create a new Account");
@@ -78,9 +78,9 @@ public class ConnexionPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /email.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/email.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /padlock.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/padlock.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 51));
 
