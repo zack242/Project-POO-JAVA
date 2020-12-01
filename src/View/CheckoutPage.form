@@ -204,7 +204,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /183-1830398_shopify-guaranteed-safe-checkout-hd-png-download.png"/>
+              <Image iconType="3" name="/project/183-1830398_shopify-guaranteed-safe-checkout-hd-png-download.png"/>
             </Property>
           </Properties>
         </Component>
@@ -286,7 +286,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /calendar.png"/>
+              <Image iconType="3" name="/project/calendar.png"/>
             </Property>
           </Properties>
         </Component>

@@ -523,7 +523,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel15">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/Users/zack/NetBeansProjects/Project/pic /Sans titre1.png"/>
+                          <Image iconType="3" name="/project/Sans titre1.png"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1332,7 +1332,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="84" max="32767" attributes="0"/>
+                          <EmptySpace pref="99" max="32767" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>

@@ -258,19 +258,19 @@ public class EmployePage extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /Sans titre.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Sans titre.png"))); // NOI18N
         jLabel9.setText("Depart");
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /Sans titre1.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Sans titre1.png"))); // NOI18N
         jLabel10.setText("Destination ");
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel11.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /time.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/time.png"))); // NOI18N
         jLabel11.setText("  Time");
 
         jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /dollar.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/dollar.png"))); // NOI18N
         jLabel12.setText("  Price");
 
         jButton1.setText("ADD ");
@@ -295,7 +295,7 @@ public class EmployePage extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /plane.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/plane.png"))); // NOI18N
         jLabel1.setText("  Number");
 
         number.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +305,7 @@ public class EmployePage extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /calendar.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/calendar.png"))); // NOI18N
         jLabel4.setText("  Date");
 
         javax.swing.GroupLayout UpdateFlightsPageLayout = new javax.swing.GroupLayout(UpdateFlightsPage);
@@ -535,7 +535,7 @@ public class EmployePage extends javax.swing.JFrame {
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /dollar.png")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/dollar.png"))); // NOI18N
         jLabel15.setText("TOTAL SALES ");
 
         totalflights.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -544,7 +544,7 @@ public class EmployePage extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /plane.png")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/plane.png"))); // NOI18N
         jLabel17.setText(" Number of reservations ");
 
         Numberofreservation.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -553,7 +553,7 @@ public class EmployePage extends javax.swing.JFrame {
 
         numberofpersonnes.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         numberofpersonnes.setForeground(new java.awt.Color(255, 255, 255));
-        numberofpersonnes.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /user copie.png")); // NOI18N
+        numberofpersonnes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/user copie.png"))); // NOI18N
         numberofpersonnes.setText("20");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -676,7 +676,7 @@ public class EmployePage extends javax.swing.JFrame {
 
         UpPanel.setBackground(new java.awt.Color(0, 0, 0));
         UpPanel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        UpPanel.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /plane.png")); // NOI18N
+        UpPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/plane.png"))); // NOI18N
         UpPanel.setText("     Update flights");
         UpPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -700,7 +700,7 @@ public class EmployePage extends javax.swing.JFrame {
         MenuCustomer.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /user copie.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/user copie.png"))); // NOI18N
         jLabel6.setText("    Customers Data");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -724,7 +724,7 @@ public class EmployePage extends javax.swing.JFrame {
         MenuBooked.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /dollar.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/dollar.png"))); // NOI18N
         jLabel7.setText("    Booked flights");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

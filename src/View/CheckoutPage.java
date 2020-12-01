@@ -120,7 +120,7 @@ public class CheckoutPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /183-1830398_shopify-guaranteed-safe-checkout-hd-png-download.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/183-1830398_shopify-guaranteed-safe-checkout-hd-png-download.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel3.setText("            TOTAL");
@@ -158,7 +158,7 @@ public class CheckoutPage extends javax.swing.JFrame {
         subtotalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         subtotalLabel.setText("800 €");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/zack/NetBeansProjects/Project/pic /calendar.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/calendar.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

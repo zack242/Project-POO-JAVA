@@ -89,9 +89,10 @@ public class Employe extends Person {
     }
     
     
-    public void DeleteFlights() throws Exception {
+  public void DeleteFlights() throws Exception {
 
         new CompanyController().deleteFlights(selectedFlights.getNumber());
+        new CompanyController().upttadeStatut(selectedFlights.getNumber());
 
     }
 

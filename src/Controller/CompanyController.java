@@ -135,5 +135,12 @@ public class CompanyController {
       //  System.out.print(sql);
 
     }
+    public void upttadeStatut(String id_flight) throws Exception 
+    {
+        String sql = "UPDATE bookedflight SET statuts = 'canceled' WHERE `Flight NO.` = '"+id_flight+"' ;" ;
+        //System.out.println(sql);
+        new ConnexionSQL().requeteInsert(sql);
+       
+    }
 
 }
