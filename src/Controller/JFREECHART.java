@@ -15,11 +15,11 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 
 /**
- *
+ * This class is used to the creation of chart 
  * @author zack
  */
 
-///This class is used to the creation of chart 
+
 public class JFREECHART {
 
   

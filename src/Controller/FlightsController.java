@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Use for the DAO class 
  * @author zack
  */
 public class FlightsController {

@@ -6,7 +6,10 @@
 package Model;
 
 /**
- *
+ *Class person 
+ * use to set the essentil information for a user (name , birthday ... ) 
+ * 
+ * 
  * @author zack
  */
 public  class Person {

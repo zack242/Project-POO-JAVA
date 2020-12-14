@@ -6,7 +6,8 @@
 package View;
 
 /**
- *
+ * View 
+ * View of the checkout Page with a false interface of billing 
  * @author zack
  */
 public class CheckoutPage extends javax.swing.JFrame {

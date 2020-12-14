@@ -8,13 +8,13 @@ package Controller;
 import Model.Company;
 
 /**
- *
+ * This method allows to calculate the sum with or without reductions for each user
  * @author zack
  */
 public class CheckoutController {
 
     
-    ///This method allows to calculate the sum with or without reductions for each user
+  
     
     public void calculTotal(Company mycompany) throws Exception {
 

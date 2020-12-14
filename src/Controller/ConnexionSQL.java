@@ -5,14 +5,7 @@
  */
 package Controller;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
- /*
- * 
- * Librairies importées
- */
+
 import Model.Customer;
 import Model.Employe;
 import Model.Flight;
@@ -22,6 +15,8 @@ import java.sql.*;
  *
  * Connexion a votre BDD locale ou à distance sur le serveur de l'ECE via le
  * tunnel SSH
+ * 
+ * This class is used to create and manage all the connexion to the Data base following the DOA
  *
  * @author segado
  * @author zakaria

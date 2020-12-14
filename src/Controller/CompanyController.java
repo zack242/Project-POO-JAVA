@@ -9,10 +9,10 @@ import Model.Flight;
 import java.sql.ResultSet;
 
 /**
- *
+ * this class contains all the methods intended to add, modify or delete or obtain information related to thefts
+
  * @author zack
  */
-// this class contains all the methods intended to add, modify or delete or obtain information related to thefts
 
 
 public class CompanyController {

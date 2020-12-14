@@ -15,6 +15,10 @@ import javax.swing.table.JTableHeader;
 import net.proteanit.sql.DbUtils;
 
 /**
+ *View 
+ * Customer View with different panel 
+ * Panel to see the booked flight 
+ * Panel to uptade the data (change password , name , mail ... ) 
  *
  * @author zack
  */

@@ -18,7 +18,12 @@ import javax.swing.table.JTableHeader;
 import net.proteanit.sql.DbUtils;
 
 /**
- *
+ *View Main page 
+ * Panel to research flights 
+ * Panel to Book a flight
+ * Panel to display the result 
+ * Panel to go at the customer/employe page
+ * 
  * @author zack
  */
 

@@ -14,7 +14,11 @@ import java.util.logging.Logger;
 import net.proteanit.sql.DbUtils;
 
 /**
- *
+ *View 
+ * Employe view with different panel 
+ * Panel for Manage flight 
+ * Panel for Manage Customer 
+ * Panel for Manage BookedFlight 
  * @author zack
  */
 

@@ -6,7 +6,11 @@
 package Model;
 
 /**
- *
+ *Class Flight 
+ * use to represente all the data for a flight 
+ * 
+ * 
+ * 
  * @author zack
  */
 public class Flight {

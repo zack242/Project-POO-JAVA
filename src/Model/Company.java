@@ -9,7 +9,11 @@ import Controller.CompanyController;
 import Controller.Connexion;
 
 /**
- *
+ * Class company 
+ * This classe is used to set the main user of the app
+ * user can be i client 
+ * user can be i employee 
+ * 
  * @author zack
  */
 

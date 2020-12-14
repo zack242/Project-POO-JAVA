@@ -13,11 +13,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This class allows users to connect and register to the database.
  * @author zack
  */
 
-/// This class allows users to connect and register to the database.
+/// 
 
 public class Connexion {
 

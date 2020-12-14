@@ -10,7 +10,9 @@ import java.sql.ResultSet;
 
 
 /**
- *
+ * Class Customer extends Person 
+ * This classe give the possibilty to the customer to buy a flight and manage the booked flight 
+ * 
  * @author zack
  */
 public class Customer extends Person implements discount {

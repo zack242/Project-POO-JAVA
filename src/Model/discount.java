@@ -6,7 +6,8 @@
 package Model;
 
 /**
- *
+ * interface discount 
+ * use to set the value of discount following the age of customer 
  * @author zack
  */
 //////Interface for discount ///////////////

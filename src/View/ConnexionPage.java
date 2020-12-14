@@ -10,7 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *View 
+ * View of signup page to permit to the user to connect to his personal account 
+ * 
  * @author zack
  */
 public class ConnexionPage extends javax.swing.JFrame {

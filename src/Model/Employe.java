@@ -9,7 +9,10 @@ import Controller.CompanyController;
 import java.sql.ResultSet;
 
 /**
- *
+ *Class Employe 
+ * This class containt all the action for the employe 
+ * the employe can add / delete / update a fly 
+ * the employe can add / delete an customer
  * @author zack
  */
 

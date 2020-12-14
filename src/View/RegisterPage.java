@@ -8,7 +8,9 @@ package View;
 import Controller.Connexion;
 
 /**
- *
+ *View 
+ * Register Page to create a new account for the customer 
+ * 
  * @author zack
  */
 public class RegisterPage extends javax.swing.JFrame {
