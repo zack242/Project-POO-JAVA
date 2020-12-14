@@ -8,6 +8,7 @@
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/ConnexionSQL.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/View/EmployePage.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/Connexion.java</file>
+            <file>file:/Users/zack/NetBeansProjects/Project/src/Model/Customer.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/View/mainPage.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/Password.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/CompanyController.java</file>
@@ -17,6 +18,7 @@
             <file>file:/Users/zack/NetBeansProjects/Project/src/View/LoadingPage.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/JFREECHART.java</file>
             <file>file:/Users/zack/NetBeansProjects/Project/src/Controller/CheckoutController.java</file>
+            <file>file:/Users/zack/NetBeansProjects/Project/src/Model/Employe.java</file>
         </group>
     </open-files>
 </project-private>
